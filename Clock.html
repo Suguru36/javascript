@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript学習</title>
+</head>
+<body>
+    <p id="result">Pタグの文字列</p>
+    <!-- <input type="button" value="取得" onclick="show();"> -->
+
+    <script>
+        function setCurrentTime() { //現在時刻を取得してHTMLのPタグを書きかえする
+            var result = document.getElementById('result'); //ID=resultの要素の値を取得
+            // console.log(result.innerText);
+            var nowDate = new Date(); //現在時刻を取得して変数に格納
+            result.innerText = nowDate.toLocaleString(); 
+        };
+
+        function timeUpdate() { //
+            setInterval(timer1, 1000);
+            function timer1(){
+                setCurrentTime();
+            }
+        }
+
+        window.onload = timeUpdate;
+
+    </script>
+</body>
+</html>
