@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <style>
+        .time {
+            font-size:50px;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<title>STOP WATCH</title>
+<body>
+    <div class="time" id="timer">HH:MM:SS:ss</div>
+    <input type="button" id="start" value="Start" onclick = "stopWatch1.startTimer()"></input>
+    <input type="button" id="stop"  value="Stpo"  onclick = "stopWatch1.stopTimer()"></input>
+    <input type="button" id="reset" value="Reset" onclick = "stopWatch1.resetTimer()"></input>
+</body>
+</html>
+
+<script>
+    class stopWatch {
+        constructor(){
+            console.log("初期化");
+            // ページロード時の時間を取得
+            this.startTime = Date.now();
+            console.log(this.startTime);
+        }
+
+        startTimer() {
+            console.log("start")
+        }
+
+        stopTimer() {
+            console.log("stop")
+        }
+
+        resetTimer() {
+            console.log("reset")
+        }
+
+        countUpTimer() {
+            console.log("CountUp");
+        }
+
+    }
+
+    const stopWatch1 = new stopWatch();
+    // while(1){
+    //     setTimeout(stopWatch1.countUpTimer(), 1000);
+    // }
+
+
+
+</script>
