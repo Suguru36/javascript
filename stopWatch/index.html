@@ -23,36 +23,42 @@
 
 <script>
     class stopWatch {
-        constructor(){
+        constructor() {
             console.log("初期化");
             // ページロード時の時間を取得
-            this.startTime = Date.now();
-            console.log(this.startTime);
+            stopWatch.startTime = Date.now();
+            console.log(stopWatch.startTime);
+            stopWatch.timer = document.getElementById("timer");
         }
 
         startTimer() {
-            console.log("start")
+            console.log("start");
         }
 
         stopTimer() {
-            console.log("stop")
+            console.log("stop");
         }
 
         resetTimer() {
-            console.log("reset")
+            console.log("reset");
         }
 
-        countUpTimer() {
-            console.log("CountUp");
+        countUpTimer()  {
+            console.log("update");
+            setInterval(timer1, 100);
+            function timer1(){
+                this.currentTime = Date.now();
+                // console.log(this.currentTime);
+                this.diffTime = this.currentTime - stopWatch.startTime;
+                // console.log(this.diffTime);
+                stopWatch.timer.innerText = this.diffTime;
+            }
         }
+
 
     }
 
     const stopWatch1 = new stopWatch();
-    // while(1){
-    //     setTimeout(stopWatch1.countUpTimer(), 1000);
-    // }
-
-
+    window.onload = stopWatch1.countUpTimer;
 
 </script>
